@@ -1,0 +1,19 @@
+{
+    "0" : {"name" : "NA",
+           "value" : "NA"},
+
+    "1" : {"name" : "years",
+           "value" : "1"},
+    
+    "2" : {"name" : "months",
+           "value" : "12"},
+
+    "3" : {"name" : "weeks",
+           "value" : "52"},
+
+    "4" : {"name" : "days",
+           "value" : "365"},
+
+    "5" : {"name" : "hours",
+           "value" : "8760"}
+}

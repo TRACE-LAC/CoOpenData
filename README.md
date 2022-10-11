@@ -1,0 +1,200 @@
+# TRACE-LAC -- **ColOpenData**
+## Description
+
+**ColOpenData allows users to download and clean epidemiological data from the Sivigila datasets.**
+
+This package allows users to download and clean epidemiological data from the Sivigila datasets. The package is divided into two main functions: download and clean. The download function allows users to download the data from the Sivigila website. The clean function allows users to clean the data downloaded from the Sivigila website.
+
+## Dependencies
+    python 3.6+
+    R 3.6.1+
+    pandas
+    numpy
+    os
+    selenium
+    reticulate
+
+## Usage
+The main functions in this package are the following:
+
+        downloadSivigilaData(years_to_download, events_to_download)
+
+Tha paramaters for *downloadSivigilaData* are:
+1) years_to_download: a list of years to download. The years must be between 2007 and 2020.
+2) events_to_download: a list of events to download. Note that the events must be in the Sivigila website.
+
+        preprocessData(years_to_preprocess, events_to_preprocess, save)
+
+The paramaters for *preprocessData* are:
+1) years_to_preprocess: a list of years to preprocess. The years must be between 2007 and 2020.
+2) events_to_preprocess: a list of events to preprocess. Note that the events must be in the Sivigila website.
+3) save: a boolean variable that indicates if the user wants to save the data or not.
+
+        preprocessDataDemographics(save)
+
+The paramaters for *preprocessDataDemographics* are:
+1) save: a boolean variable that indicates if the user wants to save the data or not.
+
+
+        preprocessDataHouseholds(save)
+
+The paramaters for *preprocessDataHouseholds* are:
+1) save: a boolean variable that indicates if the user wants to save the data or not.
+
+## Event and code dictionary
+
+The following table shows the events and codes that can be downloaded from the Sivigila website.
+
+    "ACCIDENTE OFIDICO": "100", 
+    "COLERA" : "200",
+    "DENGUE": "210", 
+    "DENGUE CLASICO": "210", 
+    "DENGUE GRAVE": "220", 
+    "DENGUE HEMORRAGICO": "220", 
+    "EVENTO ADVERSO SEGUIDO A LA VACUNACION.": "298", 
+    "AGRESIONES POR ANIMALES POTENCIALMENTE TRANSMISORES DE RABIA": "300", 
+    "EXPOSICION RABICA": "300", 
+    "INTOXICACION POR PLAGUICIDAS": "360", 
+    "INTOXICACION POR FARMACOS": "370", 
+    "HEPATITIS A": "330", 
+    "FIEBRE AMARILLA": "310", 
+    "FIEBRE TIFOIDEA Y PARATIFOIDEA": "320", 
+    "HEPATITIS B": "340", 
+    "INTOXICACION POR METANOL": "380", 
+    "INTOXICACION POR METALES PESADOS": "390", 
+    "INTOXICACION POR SOLVENTES": "400", 
+    "LEISHMANIASIS CUTANEA": "420", 
+    "LEISHMANIASIS MUCOSA": "430", 
+    "LEISHMANIASIS MUCOCUTANEA": "430", 
+    "LEISHMANIASIS VISCERAL": "440", 
+    "LEISHMANIASIS SIN ESPECIFICAR": "420", 
+    "LEPRA": "450", 
+    "LEPTOSPIROSIS": "455", 
+    "LESIONES POR POLVORA": "458", 
+    "MALARIA ASOCIADA (FORMAS MIXTAS)": "465", 
+    "MALARIA ASOCIADA": "465", 
+    "HIPOTIROIDISMO CONGENITO": "343", 
+    "MALARIA FALCIPARUM": "465", 
+    "MALARIA MALARIE": "480", 
+    "MALARIA VIVAX": "465", 
+    "MALARIA COMPLICADA": "495", 
+    "MENINGITIS  MENINGOCOCCICA": "500", 
+    "MENINGITIS POR HAEMOPHILUS INFLUENZAE": "510", 
+    "MENINGITIS POR NEUMOCOCO": "520", 
+    "MENINGITIS TUBERCULOSA": "530", 
+    "MORTALIDAD POR MALARIA": "540", 
+    "MORTALIDAD MALARIA": "540", 
+    "MORTALIDAD MATERNA": "550", 
+    "MORTALIDAD PERINATAL Y NEONATAL TARDIA": "560", 
+    "MORTALIDAD PERINATAL": "560", 
+    "PAROTIDITIS": "620", 
+    "SIFILIS CONGENITA": "740", 
+    "MORTALIDAD POR DENGUE": "580", 
+    "MORTALIDAD POR EDA 0-4 ANOS": "590", 
+    "MORTALIDAD POR IRA": "600", 
+    "MORTALIDAD POR IRA 0-4 ANOS": "600", 
+    "RABIA HUMANA": "670", 
+    "RABIA ANIMAL": "670", 
+    "RUBEOLA": "710", 
+    "SIFILIS GESTACIONAL": "750", 
+    "SIFILIS OTRAS FORMAS": "750", 
+    "TETANOS ACCIDENTAL": "760", 
+    "TETANOS OTROS": "760", 
+    "TETANOS NEONATAL": "770", 
+    "TOS FERINA": "800", 
+    "TOSFERINA": "800", 
+    "TUBERCULOSIS EXTRA PULMONAR": "810", 
+    "TUBERCULOSIS PULMONAR": "820", 
+    "VARICELA INDIVIDUAL": "831", 
+    "VIH/SIDA/MORTALIDAD POR SIDA": "850", 
+    "VIH": "850",
+    "SIDA": "850",
+    "ESI - IRAG (VIGILANCIA CENTINELA)": "345", 
+    "LEUCEMIA AGUDA PEDIATRICA LINFOIDE": "456", 
+    "LEUCEMIA AGUDA PEDIATRICA MIELOIDE": "457", 
+    "PARALISIS FLACIDA AGUDA (MENORES DE 15 ANOS)": "610", 
+    "PARALISIS FLACIDA AGUDA (< DE 15 ANOS)": "610", 
+    "PARALISIS FLACIDA AGUDA": "610", 
+    "INFECCION RESPIRATORIA AGUDA GRAVE IRAG INUSITADA": "348", 
+    "ANOMALIAS CONGENITAS": "735", 
+    "INTOXICACION POR MONOXIDO DE CARBONO Y OTROS GASES": "412", 
+    "INTOXICACION POR SUSTANCIAS PSICOACTIVAS": "414", 
+    "TUBERCULOSIS FARMACORRESISTENTE": "825", 
+    "SARAMPION": "730", 
+    "BAJO PESO AL NACER": "110", 
+    "MORBILIDAD MATERNA EXTREMA": "549", 
+    "VCM VIF VSX": "875", 
+    "INTOXICACION POR OTRAS SUSTANCIAS QUIMICAS": "410", 
+    "INTOXICACION POR OTRAS SUSTANCIAS QUIM.": "410", 
+    "INTOXICACIONES NO ALIMENTARIAS": "410", 
+    "EXPOSICION A FLUOR": "228", 
+    "CHAGAS": "205", 
+    "MORTALIDAD POR DESNUTRICION": "112", 
+    "TIFUS ENDEMICO TRASMITIDO POR PULGAS": "790", 
+    "CHIKUNGUNYA": "217", 
+    "HEPATITIS C": "341", 
+    "LESIONES POR ARTEFACTOS EXPLOSIVOS (POLVORA Y MINAS ANTIPERSONAL)": "452", 
+    "CANCER INFANTIL": "459", 
+    "TIFUS EPIDEMICO TRANSMITIDO POR PIOJOS": "780", 
+    "ZIKA": "895", 
+    "CANCER DE LA MAMA Y CUELLO UTERINO": "155", 
+    "DESNUTRICION AGUDA EN MENORES DE 5 ANOS": "113", 
+    "ENFERMEDADES HUERFANAS - RARAS": "342", 
+    "INTENTO DE SUICIDIO": "356", 
+    "INFECCION ASOCIADA A DISPOSITIVOS": "357", 
+    "DIFTERIA": "230", 
+    "TRACOMA": "305", 
+    "DEFECTOS CONGENITOS": "215", 
+    "MALARIA - TODAS LAS FORMAS": "465", 
+    "VIGILANCIA EN SALUD PUBLICA DE LA VIOLENCIA DE GENERO E INTRAFAMILIAR": "875", 
+    "BAJO PESO AL NACER A TERMINO": "110", 
+    "CANCER EN MENORES DE 18 ANOS": "115", 
+    "EXPOSICION A FLUOR (VIGILANCIA CENTINELA)": "228", 
+    "HEPATITIS B, C Y COINFECCION HEPATITIS B Y DELTA": "340", 
+    "ENDOMETRITIS PUERPERAL": "351", 
+    "INFECCIONES ASOCIADAS A PROCEDIMIENTO MEDICO QUIRURGICO": "352", 
+    "INFECCIONES ASOCIADAS A DISPOSITIVOS": "357", 
+    "INTOXICACIONES": "365", 
+    "INTOXICACIONES ALIMENTARIAS": "365", 
+    "MENINGITIS BACTERIANA Y ENFERMEDAD MENINGOCOCICA": "535", 
+    "MENINGITIS BACTERIANA": "535", 
+    "MENINGITIS HAEMOPHILUS": "535", 
+    "TUBERCULOSIS - SENSIBLE": "813", 
+    "VARICELA": "831", 
+    "INFECCION RESPIRATORIA AGUDA GRAVE INUSITADA": "348", 
+    "VIGILANCIA DE MUERTES EN MENORES DE CINCO ANOS POR EDA": "591", 
+    "VIGILANCIA DE MUERTES EN MENORES DE CINCO ANOS POR IDESNUTRICION": "591", 
+    "EVENTO ADVERSO SEGUIDO A LA VACUNACION GRAVE": "298", 
+    "MORTALIDAD MATERNA - TEMPRANA": "551", 
+    "CHAGAS CRONICO": "205", 
+    "TUBERCULOSIS - RESISTENTE": "813", 
+    "VIGILANCIA DE MUERTES EN MENORES DE CINCO ANOS POR IRA": "591", 
+    "LESIONES DE CAUSA EXTERNA - PROCEDIMIENTOS ESTETICOS": "453", 
+    "CHAGAS AGUDO": "205", 
+    "INFECCIONES ASOCIADAS A PROCEDIMIENTOS MEDICO-QUIRURGICOS": "352", 
+    "INFECCIONES ASOCIADA A DISPOSITIVOS EN AMBITO HOSPITALARIO": "357", 
+    "INTOXICACION POR MEDICAMENTOS": "370", 
+    "CANCER INFANTIL": "459", 
+    "MENINGITIS MENINGOCOCCICA": "500", 
+    "ANOMALIAS CONGENITAS": "735", 
+    "SIFILIS CONGENITA": "740", 
+    "ACCIDENTE OFIDICO": "100", 
+    "HIPOTIROIDISMO CONGENITO": "343", 
+    "TUBERCULOSIS FARMACORRESISTENTE": "813", 
+    "MORTALIDAD MATERNA TEMPRANA": "550", 
+    "SARAMPION": "730", 
+    "DESNUTRICION AGUDA EN MENORES DE 5 ANOS": "113", 
+    "CANCER EN MENORES DE 18 ANOS": "115", 
+    "EVENTO ADVERSO GRAVE POSTERIOR A LA VACUNACION": "298", 
+    "HEPATITIS B, C Y COINFECCION HEPATITIS B Y DELTA": "340", 
+    "INFECCIONES DE SITIO QUIRURGICO ASOCIADAS A PROCEDIMIENTO MEDICO QUIRURGICO": "352", 
+    "IAD  INFECCIONES ASOCIADAS A DISPOSITIVOS  INDIVIDUAL": "357", 
+    "INTENTO DE SUICIDIO CON MECANISMO INTOXICACION": "365", 
+    "LESIONES DE CAUSA EXTERNA": "453", 
+    "MORTALIDAD PERINATAL Y NEONATAL TARDIA": "560", 
+    "SINDROME DE RUBEOLA CONGENITA": "720", 
+    "RUBEOLA CONGENITA": "720", 
+    "TUBERCULOSIS": "813", 
+    "VIGILANCIA EN SALUD PUBLICA DE LA VIOLENCIA DE GENERO E INTRAFAMILIAR": "875", 
+    "MORTALIDAD MATERNA - DATOS BASICOS": "551", 
+    "VIGILANCIA INTEGRADA DE MUERTES EN MENORES DE CINCO ANOS POR INFECCION RESPIRATORIA AGUDA, ENFERMEDAD DIARREICA AGUDA Y/O DESNUTRICI\u00d3N": "591"
